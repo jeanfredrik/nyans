@@ -1,0 +1,26 @@
+{
+  "name": "@nyans/react",
+  "version": "0.0.0",
+  "source": "src/index.js",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "nyans-builder",
+    "dev": "nyans-builder",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.7.0"
+  },
+  "devDependencies": {
+    "@nyans/builder": "*",
+    "@babel/core": "^7.16.0",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/react": "^6.4.9",
+    "babel-loader": "^8.2.3",
+    "react": "^17.0.2"
+  }
+}

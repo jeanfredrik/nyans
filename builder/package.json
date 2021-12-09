@@ -1,0 +1,14 @@
+{
+  "name": "@nyans/builder",
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "nyans-builder": "./bin/builder.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.2",
+    "esbuild": "^0.14.2",
+    "fast-glob": "^3.2.7",
+    "rimraf": "^3.0.2"
+  }
+}
