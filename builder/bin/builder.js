@@ -24,22 +24,21 @@ let outdir = path.resolve(main, "..");
 const run = async () => {
   //Start build service
   try {
-    // await rimrafAsync(outdir);
+    await rimrafAsync(outdir);
     const entryPoints = await glob(entry);
-    console.log({ entryPoints });
-    // // Get time before build starts
-    // const timerStart = Date.now();
-    // // Build code
-    // await build({
-    //   entryPoints,
-    //   outdir,
-    //   bundle: false,
-    //   loader: { ".js": "jsx" },
-    //   ...esbuild,
-    // });
-    // // Get time after build ends
-    // const timerEnd = Date.now();
-    // console.log(`Built in ${timerEnd - timerStart}ms.`);
+    // Get time before build starts
+    const timerStart = Date.now();
+    // Build code
+    await build({
+      entryPoints,
+      outdir,
+      bundle: false,
+      loader: { ".js": "jsx" },
+      ...esbuild,
+    });
+    // Get time after build ends
+    const timerEnd = Date.now();
+    console.log(`Built in ${timerEnd - timerStart}ms.`);
   } catch (e) {
     // OOPS! ERROR!
   }
