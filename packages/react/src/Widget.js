@@ -2,7 +2,7 @@ import { css, jsx } from "@emotion/react";
 import styled from "@emotion/styled";
 import * as nyans from "@nyans/parser";
 import chroma from "chroma-js";
-import { fromPairs, kebabCase, pickBy } from "lodash";
+import { kebabCase } from "lodash";
 // import PropTypes from "prop-types";
 
 Widget.propTypes = {

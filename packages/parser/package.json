@@ -1,6 +1,12 @@
 {
   "name": "@nyans/parser",
+  "license": "MIT",
   "version": "0.0.0",
   "main": "index.js",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "chroma-js": "^2.1.2",
+    "lodash": "^4.17.21",
+    "yaml": "^1.10.2"
+  }
 }
