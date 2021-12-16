@@ -5,22 +5,35 @@
   "main": "./dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "nyans-builder",
-    "dev": "nyans-builder",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build": "babel src -d dist",
+    "build:storybook": "DISABLE_NEW_JSX_TRANSFORM=true build-storybook",
+    "dev": "yarn build --watch",
+    "storybook": "DISABLE_NEW_JSX_TRANSFORM=true start-storybook"
   },
   "dependencies": {
-    "@emotion/react": "^11.7.0"
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@nyans/parser": "*",
+    "chroma-js": "^2.1.2",
+    "lodash": "^4.17.21",
+    "tailwindcss": "^3.0.1",
+    "yaml": "^1.10.2"
   },
   "devDependencies": {
-    "@nyans/builder": "*",
+    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@nyans/builder": "*",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/react": "^6.4.9",
     "babel-loader": "^8.2.3",
-    "react": "^17.0.2"
+    "babel-merge": "^3.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack-merge": "^5.8.0"
   }
 }
