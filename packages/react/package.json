@@ -14,7 +14,7 @@
     "dev": "yarn build --watch",
     "storybook": "DISABLE_NEW_JSX_TRANSFORM=true start-storybook",
     "prepare": "yarn build",
-    "prepublishOnly": "cp ../README.md ."
+    "prepublishOnly": "cp ../../README.md ."
   },
   "dependencies": {
     "@emotion/react": "^11.7.0",
