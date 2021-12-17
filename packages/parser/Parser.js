@@ -12,13 +12,10 @@ export default class Parser {
   stringify(items) {
     let obj = {};
     items.forEach(({ key, ...item }) => {
-      console.log({ key, ...item });
       if (!item.value && typeof item.shades !== "object") {
         return;
       }
-      if (!key) {
-        key = key = item.name || item.label;
-      }
+      key = item.name || item.label;
       if (!key) {
         return;
       }
@@ -114,28 +111,22 @@ export default class Parser {
     });
   }
 
-  parse(input) {
-    try {
-      if (typeof input === "string") {
-        input = input.replace(/(?<!")#[0-9a-fA-F]{3,8}\b(?!")/g, '"$&"');
-        input = yaml.parse(input);
-      }
-    } catch {
-      // Do nothing
+  parse(items) {
+    if (typeof items === "string") {
+      items = items.replace(/(?<!")#[0-9a-fA-F]{3,8}\b(?!")/g, '"$&"');
+      items = yaml.parse(items);
     }
 
-    if (Array.isArray(input)) {
-      input.map((item, index) => {
+    if (Array.isArray(items)) {
+      items = items.map((item, index) => {
         if (typeof item === "string") {
           item = { value: item };
         }
-        if (!item.key) {
-          item.key = item.name || item.label || index;
-        }
+        item.key = item.name || item.label || String(index);
         return item;
       });
     } else {
-      input = Object.entries(input || {}).map(([key, item]) => {
+      items = Object.entries(items || {}).map(([key, item]) => {
         if (typeof item === "string") {
           item = { value: item };
         }
@@ -146,6 +137,6 @@ export default class Parser {
       });
     }
 
-    return input;
+    return items;
   }
 }
