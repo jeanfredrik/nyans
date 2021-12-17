@@ -124,7 +124,11 @@ export default class Parser {
       // Do nothing
     }
 
-    let items = Object.entries(input || {}).map(([key, item]) => {
+    if (!Array.isArray(input)) {
+      input = Object.entries(input || {});
+    }
+
+    let items = input.map(([key, item]) => {
       if (typeof item === "string") {
         item = { value: item };
       }
@@ -133,6 +137,7 @@ export default class Parser {
         key,
       };
     });
+
     return items;
   }
 }
