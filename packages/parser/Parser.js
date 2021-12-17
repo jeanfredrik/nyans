@@ -125,9 +125,12 @@ export default class Parser {
     }
 
     if (Array.isArray(input)) {
-      input.map((item) => {
+      input.map((item, index) => {
         if (typeof item === "string") {
           item = { value: item };
+        }
+        if (!item.key) {
+          item.key = item.name || item.label || index;
         }
         return item;
       });
