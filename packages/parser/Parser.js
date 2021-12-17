@@ -8,6 +8,15 @@ function adjustLightness(value) {
 
 const DEFAULT_SCALE_MODE = "hcl";
 
+function removeTransparency(color) {
+  color = chroma(color);
+  let alpha = color.alpha();
+  if (alpha === 1) {
+    return color;
+  }
+  return chroma.mix(color.alpha(1), "white", alpha, "rgb");
+}
+
 export default class Parser {
   stringify(items) {
     let obj = {};
@@ -47,7 +56,10 @@ export default class Parser {
   ) {
     return items.map((item) => {
       let { key, value, shades = true } = item;
-      let color = chroma.valid(value) && chroma(value);
+      let color = chroma.valid(value) && removeTransparency(chroma(value));
+      if (color) {
+        item.value = color.hex("rgb");
+      }
       if (shades === false) {
         shades = {};
       } else {
@@ -73,7 +85,11 @@ export default class Parser {
         if (!Object.values(shades).length && color) {
           shades[Math.round(1000 - color.get("hcl.l") * 10)] = value;
           scale = chroma
-            .scale(["white", ...Object.values(shades), "black"])
+            .scale([
+              "white",
+              ...Object.values(shades).map(removeTransparency),
+              "black",
+            ])
             .mode(autoShadeScaleMode)
             .domain([0, ...Object.keys(shades).map(Number), 1000]);
           shades = fromPairs(

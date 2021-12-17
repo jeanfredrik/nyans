@@ -10,7 +10,7 @@ describe("Parser", () => {
 
       let normalizedItems = nyans.normalize(items);
       expect(normalizedItems).toMatchObject([
-        { key: "Blue", label: "Blue", value: "blue", name: "blue" },
+        { key: "Blue", label: "Blue", value: "#0000ff", name: "blue" },
       ]);
     });
 
@@ -20,7 +20,7 @@ describe("Parser", () => {
 
       let normalizedItems = nyans.normalize(items);
       expect(normalizedItems).toMatchObject([
-        { key: "Blue", label: "Blue", value: "blue", name: "blue" },
+        { key: "Blue", label: "Blue", value: "#0000ff", name: "blue" },
       ]);
     });
 
@@ -33,8 +33,8 @@ describe("Parser", () => {
 
       let normalizedItems = nyans.normalize(items);
       expect(normalizedItems).toMatchObject([
-        { key: "0", value: "blue" },
-        { key: "1", value: "#333" },
+        { key: "0", value: "#0000ff" },
+        { key: "1", value: "#333333" },
       ]);
     });
 
@@ -44,7 +44,7 @@ describe("Parser", () => {
 
       let normalizedItems = nyans.normalize(items);
       expect(normalizedItems).toMatchObject([
-        { key: "Blue", label: "Blue", value: "blue", name: "blue" },
+        { key: "Blue", label: "Blue", value: "#0000ff", name: "blue" },
       ]);
     });
 
@@ -59,7 +59,7 @@ describe("Parser", () => {
 
       let normalizedItems = nyans.normalize(items);
       expect(normalizedItems).toMatchObject([
-        { key: "Blå", label: "Blå", value: "blue", name: "bla" },
+        { key: "Blå", label: "Blå", value: "#0000ff", name: "bla" },
       ]);
     });
 
@@ -69,7 +69,7 @@ describe("Parser", () => {
 
       let normalizedItems = nyans.normalize(items);
       expect(normalizedItems).toMatchObject([
-        { key: "blue", label: "blue", value: "#00f", name: "blue" },
+        { key: "blue", label: "blue", value: "#0000ff", name: "blue" },
       ]);
     });
   });
