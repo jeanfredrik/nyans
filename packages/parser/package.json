@@ -4,9 +4,13 @@
   "version": "0.1.0",
   "main": "index.js",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "chroma-js": "^2.1.2",
     "lodash": "^4.17.21",
     "yaml": "^1.10.2"
-  }
+  },
+  "gitHead": "cb26ca2c796bc623360cd0f6cf3e0f15f508104d"
 }

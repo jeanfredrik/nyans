@@ -8,6 +8,9 @@
   "files": [
     "dist/**/*"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "babel src -d dist",
     "build:storybook": "DISABLE_NEW_JSX_TRANSFORM=true build-storybook",
@@ -40,5 +43,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "webpack-merge": "^5.8.0"
-  }
+  },
+  "gitHead": "cb26ca2c796bc623360cd0f6cf3e0f15f508104d"
 }
