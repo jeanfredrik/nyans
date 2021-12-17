@@ -1,5 +1,5 @@
 import chroma from "chroma-js";
-import { fromPairs, kebabCase, pickBy } from "lodash";
+import { fromPairs, kebabCase, pickBy } from "lodash-es";
 import yaml from "yaml";
 
 function adjustLightness(value) {

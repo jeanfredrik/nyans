@@ -2,9 +2,11 @@ root: true
 plugins:
   - "@emotion"
   - import
+  - jest
   - react
 extends:
   - eslint:recommended
+  - plugin:jest/recommended
   - plugin:import/recommended
   - plugin:react/recommended
 parserOptions:
