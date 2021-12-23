@@ -129,7 +129,8 @@ export default class Parser {
 
   parse(items) {
     if (typeof items === "string") {
-      items = items.replace(/(?<!")#[0-9a-fA-F]{3,8}\b(?!")/g, '"$&"');
+      // items = items.replace(/(?<!")#[0-9a-fA-F]{3,8}\b(?!")/g, '"$&"');
+      items = items.replace(/(")?(#[0-9a-fA-F]{3,8})\b(")?/g, '"$2"');
       items = yaml.parse(items);
     }
 
