@@ -1,0 +1,21 @@
+{
+  "name": "@nyans/generator",
+  "license": "MIT",
+  "version": "0.1.7",
+  "main": "index.js",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "jest": {
+    "transform": {}
+  },
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "dependencies": {
+    "chroma-js": "^2.1.2",
+    "jest": "^27.4.5",
+    "lodash-es": "^4.17.21"
+  }
+}
