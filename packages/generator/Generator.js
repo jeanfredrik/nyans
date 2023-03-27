@@ -1,5 +1,5 @@
-import chroma from "chroma-js";
-import { fromPairs, isArray, mapValues, pickBy } from "lodash-es";
+const chroma = require("chroma-js");
+const { fromPairs, isArray, mapValues, pickBy } = require("lodash");
 
 const DEFAULT_SCALE_MODE = "hcl";
 
@@ -12,7 +12,7 @@ function removeTransparency(color) {
   return chroma.mix(color.alpha(1), "white", alpha, "rgb");
 }
 
-export default class Generator {
+module.exports = class Generator {
   normalizeScale(scale) {
     if (typeof scale === "string") {
       let main = chroma.valid(scale) && removeTransparency(chroma(scale));
@@ -53,4 +53,4 @@ export default class Generator {
       .domain([0, ...Object.keys(scale).map(Number), 1000]);
     return scale(shade).hex("rgb");
   }
-}
+};

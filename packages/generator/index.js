@@ -1,7 +1,7 @@
-import Generator from "./Generator";
+const Generator = require("./Generator");
 
 const generator = new Generator();
 
-export default generator;
+module.exports = generator;
 
 // export const normalize = generator.normalize.bind(generator);

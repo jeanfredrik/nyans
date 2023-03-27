@@ -3,7 +3,7 @@
   "license": "MIT",
   "version": "0.1.9",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "publishConfig": {
     "access": "public"
   },
@@ -11,7 +11,7 @@
     "transform": {}
   },
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "jest"
   },
   "dependencies": {
     "chroma-js": "^2.1.2",

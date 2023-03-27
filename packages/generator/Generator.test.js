@@ -1,4 +1,4 @@
-import Generator from "./Generator";
+const Generator = require("./Generator");
 
 let generator = new Generator();
 
