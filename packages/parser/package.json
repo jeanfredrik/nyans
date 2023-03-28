@@ -11,12 +11,12 @@
     "transform": {}
   },
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "jest"
   },
   "dependencies": {
     "chroma-js": "^2.1.2",
     "jest": "^27.4.5",
-    "lodash-es": "^4.17.21",
+    "lodash": "^4.17.21",
     "yaml": "^1.10.2"
   },
   "gitHead": "cb26ca2c796bc623360cd0f6cf3e0f15f508104d"

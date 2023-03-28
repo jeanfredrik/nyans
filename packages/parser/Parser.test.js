@@ -1,4 +1,4 @@
-import Parser from "./Parser";
+const Parser = require("./Parser");
 
 let nyans = new Parser();
 

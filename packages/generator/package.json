@@ -16,6 +16,6 @@
   "dependencies": {
     "chroma-js": "^2.1.2",
     "jest": "^27.4.5",
-    "lodash-es": "^4.17.21"
+    "lodash": "^4.17.21"
   }
 }

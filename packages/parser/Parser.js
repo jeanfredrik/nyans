@@ -1,6 +1,6 @@
-import chroma from "chroma-js";
-import { fromPairs, kebabCase, pickBy } from "lodash-es";
-import yaml from "yaml";
+const chroma = require("chroma-js");
+const { fromPairs, kebabCase, pickBy } = require("lodash");
+const yaml = require("yaml");
 
 function adjustLightness(value) {
   return 1 - (1 - value) ** 0.66;
@@ -17,7 +17,7 @@ function removeTransparency(color) {
   return chroma.mix(color.alpha(1), "white", alpha, "rgb");
 }
 
-export default class Parser {
+module.exports = class Parser {
   stringify(items) {
     let obj = {};
     items.forEach(({ key, ...item }) => {
@@ -156,4 +156,4 @@ export default class Parser {
 
     return items;
   }
-}
+};
